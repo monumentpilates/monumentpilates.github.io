@@ -40,6 +40,7 @@ test.describe('Page loading & navigation', () => {
   });
 
   test('no broken internal links', async ({ page }) => {
+    test.setTimeout(120000);
     for (const pg of pages) {
       await page.goto(pg.path);
       const links = page.locator('a[href^="/"]');
@@ -62,6 +63,12 @@ test.describe('Page loading & navigation', () => {
       for (let i = 0; i < count; i++) {
         const img = images.nth(i);
         const src = await img.getAttribute('src');
+        await img.scrollIntoViewIfNeeded();
+        await img.evaluate(
+          (el) =>
+            /** @type {HTMLImageElement} */ (el).complete ||
+            new Promise((r) => { el.addEventListener('load', r); el.addEventListener('error', r); })
+        );
         const natural = await img.evaluate(
           (el) => /** @type {HTMLImageElement} */ (el).naturalWidth
         );

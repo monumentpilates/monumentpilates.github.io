@@ -18,6 +18,15 @@ test.describe('Accessibility (axe-core)', () => {
   for (const path of pages) {
     test(`${path} has no critical accessibility violations`, async ({ page }) => {
       await page.goto(path);
+      // Disable transitions and force animated elements visible for accurate contrast evaluation
+      await page.evaluate(() => {
+        document.querySelectorAll('.fade-up, .fade-in').forEach(el => {
+          el.style.transition = 'none';
+          el.classList.add('visible');
+        });
+        // Force reflow so styles apply immediately
+        document.body.offsetHeight;
+      });
       const results = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
         .analyze();

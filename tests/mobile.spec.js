@@ -5,9 +5,9 @@ const pages = ['/', '/about/', '/classes/', '/pricing/', '/schedule/', '/contact
 
 test.describe('Mobile compatibility', () => {
   // These tests only run in mobile projects (Pixel 7, iPhone 14)
-  test.skip(({ browserName }, testInfo) => {
-    return !testInfo.project.name.startsWith('mobile');
-  }, 'Mobile-only tests');
+  test.beforeEach(({}, testInfo) => {
+    test.skip(!testInfo.project.name.startsWith('mobile'), 'Mobile-only tests');
+  });
 
   test('hamburger menu is visible on mobile', async ({ page }) => {
     await page.goto('/');

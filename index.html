@@ -20,6 +20,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Monument Pilates — Pflugerville's Premier Pilates Studio">
   <meta name="twitter:description" content="Family-owned Pilates studio in Pflugerville, TX. Classical & contemporary Pilates with certified instructors.">
+  <meta name="twitter:image" content="https://www.monumentpilates.com/img/studio-interior-wide.jpg">
+  <meta property="og:image" content="https://www.monumentpilates.com/img/studio-interior-wide.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/logo-badge-beige.png" type="image/png">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://www.monumentpilates.com/">
@@ -44,6 +49,8 @@
     "url": "https://www.monumentpilates.com/",
     "telephone": "",
     "email": "howdy@monumentpilates.com",
+    "image": "https://www.monumentpilates.com/img/studio-interior-wide.jpg",
+    "logo": "https://www.monumentpilates.com/img/logo-badge-beige.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1900 E Howard Lane Suite G2",
@@ -63,7 +70,36 @@
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "14:00" }
     ],
     "priceRange": "$$",
-    "sameAs": []
+    "sameAs": [
+      "https://www.facebook.com/monumentpilates",
+      "https://www.instagram.com/monumentpilates",
+      "https://www.youtube.com/@monumentpilates"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Pilates Classes",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Group Reformer Class" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Private Pilates Session" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Duet Pilates Session" } }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Monument Pilates",
+    "url": "https://www.monumentpilates.com/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Monument Pilates",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.monumentpilates.com/img/logo-badge-beige.png"
+      }
+    }
   }
   </script>
 
@@ -73,6 +109,8 @@
   <meta name="build-id" content="ad-mp-7f3a9c2e1d-20260305">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Hidden Fingerprint -->
   <div class="ad-fp-7f3a9c2e1d" aria-hidden="true" data-ad-src="AjayaDesign" data-ad-id="7f3a9c2e1d" data-ad-ts="20260305"></div>
 
@@ -97,7 +135,7 @@
         <span>Pflugerville, TX</span>
       </a>
 
-      <div class="navbar__toggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <div class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
         <span></span><span></span><span></span>
       </div>
 
@@ -115,6 +153,8 @@
       </div>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
@@ -374,12 +414,15 @@
         <h2>Get Updates &amp; Early Access to Sales</h2>
         <p style="color: var(--color-warm-sand); margin-top: var(--space-md);">Be the first to know about everything Monument Pilates!</p>
         <form class="newsletter-form" aria-label="Newsletter signup">
-          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="Your email address" required aria-label="Email address">
           <button type="submit" class="btn btn--accent">Subscribe</button>
         </form>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">

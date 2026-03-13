@@ -40,15 +40,18 @@
   const navLinks = document.querySelector('.navbar__links');
   if (toggle && navLinks) {
     toggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.contains('open');
       toggle.classList.toggle('active');
       navLinks.classList.toggle('open');
-      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      document.body.style.overflow = !isOpen ? 'hidden' : '';
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         toggle.classList.remove('active');
         navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
@@ -115,16 +118,21 @@
 
   // ===== FAQ Accordion =====
   document.querySelectorAll('.faq-item__question').forEach(btn => {
+    btn.setAttribute('aria-expanded', 'false');
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
 
       // Close all others
       document.querySelectorAll('.faq-item.open').forEach(openItem => {
-        if (openItem !== item) openItem.classList.remove('open');
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
+        }
       });
 
       item.classList.toggle('open', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
     });
   });
 
