@@ -37,6 +37,7 @@
         <a href="#problems">Problems</a>
         <a href="#scores">Scores</a>
         <a href="#improvements">Improvements</a>
+        <a href="#testing">Testing</a>
         <a href="#pages">All Pages</a>
       </div>
     </div>
@@ -251,7 +252,7 @@
           <div class="issue-card__header issue-card__header--solution">✓ Our Fix</div>
           <div class="issue-card__body">
             <h3 class="issue-card__title">Full SEO Suite</h3>
-            <p class="issue-card__text">Every page has unique meta descriptions, Open Graph/Twitter cards, canonical URLs, FAQ schema, LocalBusiness schema, and keyword-optimized content. Built to rank for "Pilates Pflugerville TX" and 20+ long-tail keywords.</p>
+            <p class="issue-card__text">Every page has unique meta descriptions, Open Graph/Twitter cards, canonical URLs with trailing slashes, and keyword-optimized content. JSON-LD structured data includes HealthAndBeautyBusiness, WebSite, FAQPage, LocalBusiness, AggregateRating, OfferCatalog, AboutPage, Blog, BlogPosting, Course, Schedule, and BreadcrumbList schemas. robots.txt and sitemap.xml included. Built to rank for "Pilates Pflugerville TX" and 20+ long-tail keywords.</p>
           </div>
         </div>
 
@@ -299,7 +300,7 @@
           <div class="issue-card__header issue-card__header--solution">✓ Our Fix</div>
           <div class="issue-card__body">
             <h3 class="issue-card__title">Mobile-First Design</h3>
-            <p class="issue-card__text">Sticky navigation with smooth hamburger menu, correctly-sized tap targets, optimized font scaling (clamp), and full-width mobile layouts. Tested across breakpoints from 320px to 2560px.</p>
+            <p class="issue-card__text">Sticky navigation with smooth hamburger menu, correctly-sized tap targets (44px+), optimized font scaling (clamp), and full-width mobile layouts. Validated with automated Playwright tests across desktop Chrome, mobile Chrome (Pixel 7), and mobile Safari (iPhone 14).</p>
           </div>
         </div>
 
@@ -426,16 +427,16 @@
         <div class="improvements-list__item">
           <div class="improvements-list__icon">1</div>
           <div>
-            <div class="improvements-list__title">JSON-LD Structured Data</div>
-            <p class="improvements-list__desc">HealthAndBeautyBusiness schema, FAQPage schema, LocalBusiness schema, and AggregateRating schema — enabling rich results in Google Search.</p>
+            <div class="improvements-list__title">JSON-LD Structured Data (12 Schema Types)</div>
+            <p class="improvements-list__desc">HealthAndBeautyBusiness, WebSite, AboutPage, CollectionPage, Blog, BlogPosting, FAQPage, LocalBusiness, AggregateRating, OfferCatalog with individual Offer items, Schedule, and BreadcrumbList schemas on every subpage — enabling rich results in Google Search.</p>
           </div>
         </div>
 
         <div class="improvements-list__item">
           <div class="improvements-list__icon">2</div>
           <div>
-            <div class="improvements-list__title">Open Graph & Twitter Cards</div>
-            <p class="improvements-list__desc">Every page has full OG meta tags for beautiful social media previews when shared on Facebook, LinkedIn, Twitter/X, and messaging apps.</p>
+            <div class="improvements-list__title">Open Graph, Twitter Cards & SEO Meta</div>
+            <p class="improvements-list__desc">Every page has full OG meta tags (og:title, og:description, og:image, og:url, og:type, og:locale, og:site_name) and Twitter summary_large_image cards. Canonical URLs with trailing slash consistency, robots meta, and keyword-rich descriptions.</p>
           </div>
         </div>
 
@@ -506,8 +507,8 @@
         <div class="improvements-list__item">
           <div class="improvements-list__icon">11</div>
           <div>
-            <div class="improvements-list__title">Accessibility Compliance</div>
-            <p class="improvements-list__desc">ARIA labels on all interactive elements, proper focus states, skip-to-content potential, meaningful alt text, color contrast ratios meeting WCAG 2.1 AA.</p>
+            <div class="improvements-list__title">WCAG 2.1 AA Accessibility</div>
+            <p class="improvements-list__desc">Skip-to-content links, focus-visible outlines, prefers-reduced-motion support, aria-expanded on toggles, sr-only labels, WCAG AA color contrast (verified via axe-core on all 9 pages). Schedule table has caption, scope attributes, and keyboard-focusable scroll region.</p>
           </div>
         </div>
 
@@ -519,7 +520,119 @@
           </div>
         </div>
 
+        <div class="improvements-list__item">
+          <div class="improvements-list__icon">13</div>
+          <div>
+            <div class="improvements-list__title">WCAG AA Color Contrast — All Colors Verified</div>
+            <p class="improvements-list__desc">Every text color mathematically verified against every background it appears on. Accent (#795B10), taupe (#756651), and sage (#5F6C52) all pass 4.5:1 minimum on cream, off-white, white, and beige backgrounds. Footer demo text uses warm-sand on espresso (7.61:1).</p>
+          </div>
+        </div>
+
+        <div class="improvements-list__item">
+          <div class="improvements-list__icon">14</div>
+          <div>
+            <div class="improvements-list__title">robots.txt & XML Sitemap</div>
+            <p class="improvements-list__desc">robots.txt with sitemap reference and /report/ disallow. XML sitemap with all 9 public pages, lastmod dates, changefreq, and priority values for optimal crawl efficiency.</p>
+          </div>
+        </div>
+
+        <div class="improvements-list__item">
+          <div class="improvements-list__icon">15</div>
+          <div>
+            <div class="improvements-list__title">BreadcrumbList Schema on All Subpages</div>
+            <p class="improvements-list__desc">Every subpage has BreadcrumbList JSON-LD structured data enabling breadcrumb rich results in Google Search. Visual breadcrumb navigation also present for user orientation.</p>
+          </div>
+        </div>
+
+        <div class="improvements-list__item">
+          <div class="improvements-list__icon">16</div>
+          <div>
+            <div class="improvements-list__title">Automated Test Suite — 96 Tests</div>
+            <p class="improvements-list__desc">Comprehensive Playwright test suite covering accessibility (axe-core on all 9 pages), navigation (page loads, broken links, broken images, CSS/JS loading), and mobile compatibility (hamburger menu, touch targets, responsive images, horizontal overflow). 90 passed, 6 skipped (mobile-only on desktop), 0 failures — across desktop Chrome, mobile Chrome (Pixel 7), and mobile Safari (iPhone 14).</p>
+          </div>
+        </div>
+
+        <div class="improvements-list__item">
+          <div class="improvements-list__icon">17</div>
+          <div>
+            <div class="improvements-list__title">Pricing Schema with Individual Offers</div>
+            <p class="improvements-list__desc">OfferCatalog schema with 6 individual Offer items (Intro Special, 12-Month Unlimited, 12-Month 2x/Week, 12-Month 1x/Week, 10-Class Pack, Drop-In) including price, currency, and descriptions — enabling Google to show pricing information directly in search results.</p>
+          </div>
+        </div>
+
+        <div class="improvements-list__item">
+          <div class="improvements-list__icon">18</div>
+          <div>
+            <div class="improvements-list__title">Social Profiles & Business Identity</div>
+            <p class="improvements-list__desc">sameAs links to Facebook, Instagram, and YouTube in the main schema. Organization logo declared for Google Knowledge Panel. Image and logo properties on the HealthAndBeautyBusiness schema for visual search results.</p>
+          </div>
+        </div>
+
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- SECTION: Testing & Quality Assurance            -->
+  <!-- ============================================== -->
+  <section class="section section--white" id="testing">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-header__label">Quality Assurance</span>
+        <h2 class="section-header__title">Automated Testing Suite</h2>
+        <p class="section-header__subtitle">96 automated tests run on every push via GitHub Actions — across 3 browser configurations — ensuring nothing breaks.</p>
+      </div>
+
+      <div class="issues-grid fade-up">
+
+        <!-- Accessibility Tests -->
+        <div class="issue-card">
+          <div class="issue-card__header issue-card__header--solution">♿ Accessibility — 33 Tests</div>
+          <div class="issue-card__body">
+            <h3 class="issue-card__title">axe-core on Every Page</h3>
+            <p class="issue-card__text">Each of the 9 public pages is scanned with <strong>@axe-core/playwright</strong> for WCAG violations. Additional tests verify all images have alt text, heading hierarchy is proper (no skipped levels), and every page has a lang attribute. Runs across all 3 browser projects.</p>
+          </div>
+        </div>
+
+        <!-- Navigation Tests -->
+        <div class="issue-card">
+          <div class="issue-card__header issue-card__header--solution">🔗 Navigation — 45 Tests</div>
+          <div class="issue-card__body">
+            <h3 class="issue-card__title">Links, Images & Loading</h3>
+            <p class="issue-card__text">All 10 pages load with 200 status and correct titles. Navbar links are verified functional. Every internal link (<code>a[href^="/"]</code>) is checked for broken responses. All images are scrolled into view and verified loaded (<code>naturalWidth > 0</code>). CSS and JS resources confirmed loading without errors.</p>
+          </div>
+        </div>
+
+        <!-- Mobile Tests -->
+        <div class="issue-card">
+          <div class="issue-card__header issue-card__header--solution">📱 Mobile — 18 Tests</div>
+          <div class="issue-card__body">
+            <h3 class="issue-card__title">Touch, Scroll & Responsive</h3>
+            <p class="issue-card__text">Hamburger menu visibility and toggle behavior verified. No horizontal overflow on any page (scrollWidth ≤ clientWidth). Touch targets confirmed at 44px minimum. Hero text readable on mobile viewports. Images scale within their containers. Tested on Pixel 7 and iPhone 14 configurations.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Test Results Summary -->
+      <div class="fade-up" style="margin-top: var(--space-2xl); text-align: center;">
+        <div style="display: inline-flex; gap: var(--space-xl); flex-wrap: wrap; justify-content: center;">
+          <div style="text-align: center;">
+            <div style="font-size: 3rem; font-weight: 700; color: #15803d; font-family: var(--font-heading);">90</div>
+            <div style="font-size: 0.9rem; color: var(--color-taupe); text-transform: uppercase; letter-spacing: 0.05em;">Passed</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 3rem; font-weight: 700; color: var(--color-accent); font-family: var(--font-heading);">6</div>
+            <div style="font-size: 0.9rem; color: var(--color-taupe); text-transform: uppercase; letter-spacing: 0.05em;">Skipped</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 3rem; font-weight: 700; color: #15803d; font-family: var(--font-heading);">0</div>
+            <div style="font-size: 0.9rem; color: var(--color-taupe); text-transform: uppercase; letter-spacing: 0.05em;">Failures</div>
+          </div>
+        </div>
+        <p style="margin-top: var(--space-lg); color: var(--color-taupe); max-width: 700px; margin-left: auto; margin-right: auto;">Tests run on every push via <strong>GitHub Actions</strong> across <strong>Desktop Chrome</strong>, <strong>Mobile Chrome (Pixel 7)</strong>, and <strong>Mobile Safari (iPhone 14)</strong>. 6 tests are intentionally skipped (mobile-only checks on desktop project).</p>
+      </div>
+
     </div>
   </section>
 

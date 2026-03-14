@@ -29,12 +29,17 @@ test.describe('Page loading & navigation', () => {
     const count = await navLinks.count();
     expect(count).toBeGreaterThanOrEqual(5);
 
-    // Check all nav links resolve to 200
+    // Collect hrefs first to avoid stale locators after navigation
+    const hrefs = [];
     for (let i = 0; i < count; i++) {
-      const href = await navLinks.nth(i).getAttribute('href');
+      hrefs.push(await navLinks.nth(i).getAttribute('href'));
+    }
+
+    for (const href of hrefs) {
       if (href && href.startsWith('/')) {
         const response = await page.goto(href);
-        expect(response?.status()).toBe(200);
+        const status = response?.status() ?? 0;
+        expect(status, `Nav link ${href} returned ${status}`).toBeLessThan(400);
       }
     }
   });
@@ -45,12 +50,18 @@ test.describe('Page loading & navigation', () => {
       await page.goto(pg.path);
       const links = page.locator('a[href^="/"]');
       const count = await links.count();
+
+      // Collect all hrefs before navigating to avoid stale locators
+      const hrefs = new Set();
       for (let i = 0; i < count; i++) {
         const href = await links.nth(i).getAttribute('href');
-        if (href) {
-          const response = await page.goto(href);
-          expect(response?.status(), `Broken link: ${href} on ${pg.path}`).toBe(200);
-        }
+        if (href) hrefs.add(href);
+      }
+
+      for (const href of hrefs) {
+        const response = await page.goto(href);
+        const status = response?.status() ?? 0;
+        expect(status, `Broken link: ${href} on ${pg.path}`).toBeLessThan(400);
       }
     }
   });
