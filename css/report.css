@@ -339,6 +339,92 @@
   }
 }
 
+/* ---------- Personal Letter Section ---------- */
+.report-letter {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.report-letter__card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-2xl);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  border-top: 4px solid var(--color-accent);
+  position: relative;
+}
+
+.report-letter__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-beige);
+  font-size: 0.82rem;
+  color: var(--color-taupe);
+}
+
+.report-letter__greeting {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-espresso);
+  margin-bottom: var(--space-md);
+}
+
+.report-letter__card p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-body);
+  margin-bottom: var(--space-md);
+}
+
+.report-letter__card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-espresso);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.report-letter__callout {
+  background: #f0fdf4;
+  border-left: 4px solid #15803d;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-lg);
+  margin: var(--space-lg) 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.report-letter__callout strong {
+  color: #15803d;
+}
+
+.report-letter__sign {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-beige);
+  font-size: 0.9rem;
+  color: var(--color-taupe);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .report-letter {
+    padding: var(--space-xl) var(--space-md);
+  }
+  .report-letter__card {
+    padding: var(--space-lg) var(--space-lg);
+  }
+  .report-letter__meta {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+}
+
 /* ============================
    Old-Site HTML Mockups
    ============================ */
