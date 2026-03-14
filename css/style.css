@@ -343,7 +343,7 @@ p {
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10000;
   background: rgba(250, 246, 241, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1449,6 +1449,13 @@ a.navbar__cta::after {
   padding: 0.5rem var(--space-md);
   font-size: 0.72rem;
   letter-spacing: 0.05em;
+  position: relative;
+  z-index: 999;
+}
+
+body.menu-open .demo-notice,
+body.menu-open .top-bar {
+  display: none;
 }
 
 /* ---------- Responsive ---------- */
@@ -1474,16 +1481,22 @@ a.navbar__cta::after {
 @media (max-width: 768px) {
   .navbar__links {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background: var(--color-cream);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: var(--space-xl);
+    gap: var(--space-lg);
+    padding: 100px var(--space-lg) var(--space-2xl);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-base);
-    z-index: 1000;
+    z-index: 9999;
   }
 
   .navbar__links.open {
@@ -1497,6 +1510,7 @@ a.navbar__cta::after {
 
   .navbar__toggle {
     display: flex;
+    z-index: 10000;
   }
 
   .navbar__cta--desktop {
